@@ -45,8 +45,56 @@ export default function Contact() {
           <p className="section-subtitle">Let's work together</p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="relative w-full min-h-[80vh] flex justify-center items-center overflow-hidden bg-black">
           {/* Left Column */}
+          {/* Background Animated Gradient - Behind everything */}
+  <motion.div
+    className="absolute inset-0"
+    animate={{
+      background: [
+        'radial-gradient(circle at 20% 50%, rgba(29, 211, 150, 0.15) 0%, transparent 60%)',
+        'radial-gradient(circle at 80% 50%, rgba(101, 205, 170, 0.15) 0%, transparent 60%)',
+        'radial-gradient(circle at 20% 50%, rgba(104, 198, 167, 0.15) 0%, transparent 60%)',
+      ],
+    }}
+    transition={{
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+  {/* Animated Border Ring - Left */}
+  <motion.div
+    className="absolute left-20 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full border border-green-500/10"
+    animate={{
+      rotate: 360,
+      scale: [1, 1.05, 0.95, 1],
+    }}
+    transition={{
+      duration: 20,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  >
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-green-500/30" />
+  </motion.div>
+
+  {/* Animated Border Ring - Right */}
+  <motion.div
+    className="absolute right-20 top-1/2 -translate-y-1/2 w-72 h-72 rounded-full border border-blue-500/10"
+    animate={{
+      rotate: -360,
+      scale: [1, 0.95, 1.05, 1],
+    }}
+    transition={{
+      duration: 25,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  >
+    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-blue-500/30" />
+  </motion.div>
+
           <motion.div
             ref={ref}
             initial={{ opacity: 0, x: -50 }}
@@ -114,86 +162,12 @@ export default function Contact() {
                 >
                   <FaLinkedin />
                 </motion.a>
-                <motion.a
-                  href="https://twitter.com/hajira-ghaffar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-2xl hover:bg-green-600 hover:text-white transition-all duration-300"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                >
-                  <FaTwitter />
-                </motion.a>
+                
               </div>
             </div>
           </motion.div>
 
-          {/* Right Column - Form */}
-          <motion.form
-            ref={ref}
-            onSubmit={handleSubmit}
-            className="space-y-6"
-            initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <div className="glass-card p-8">
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-gray-300 font-medium mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-all duration-300"
-                    placeholder="John Doe"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-gray-300 font-medium mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-all duration-300"
-                    placeholder="john@example.com"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-gray-300 font-medium mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-green-500 transition-all duration-300 resize-none"
-                    placeholder="Your message here..."
-                  />
-                </div>
-
-                <motion.button
-                  type="submit"
-                  className="w-full btn-primary"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Send Message
-                </motion.button>
-              </div>
-            </div>
-          </motion.form>
+          
         </div>
       </div>
     </section>

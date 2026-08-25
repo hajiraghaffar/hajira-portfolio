@@ -14,7 +14,7 @@ const projects = [
   {
     title: "University Admission System",
     desc: "Comprehensive full-stack platform with role-based authentication, 25+ REST APIs, and real-time dashboard for students and admins.",
-    tech: ["React", "Node.js", "MongoDB", "JWT"],
+    tech: ["React", "Node.js", "MYSQL", "Tailwind"],
     live: "https://admission-system.vercel.app",
     github: "https://github.com/hajira-ghaffar/admission-system",
     featured: true
@@ -23,16 +23,14 @@ const projects = [
     title: "E-Commerce Platform",
     desc: "Full-featured e-commerce solution with payment integration, inventory management, and real-time order tracking.",
     tech: ["React", "Node.js", "Stripe", "PostgreSQL"],
-    live: "https://ecommerce-demo.vercel.app",
-    github: "https://github.com/hajira-ghaffar/ecommerce-platform",
+    
     featured: false
   },
   {
     title: "Task Management Dashboard",
     desc: "Real-time task management system with drag-and-drop, team collaboration, and analytics dashboard.",
     tech: ["React", "Firebase", "Tailwind", "Chart.js"],
-    live: "https://task-dashboard.vercel.app",
-    github: "https://github.com/hajira-ghaffar/task-dashboard",
+    
     featured: false
   }
 ];

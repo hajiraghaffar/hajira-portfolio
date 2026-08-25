@@ -79,14 +79,7 @@ export default function Hero() {
               >
                 View My Work
               </motion.a>
-              <motion.a
-                href="#contact"
-                className="px-8 py-3 border-2 border-green-600 text-green-400 font-semibold rounded-full hover:bg-green-600 hover:text-white transition-all duration-300 hover:scale-105"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Let's Talk
-              </motion.a>
+              
             </motion.div>
 
             <motion.div
@@ -113,15 +106,7 @@ export default function Hero() {
               >
                 <FaLinkedin />
               </motion.a>
-              <motion.a
-                href="https://twitter.com/hajira-ghaffar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-green-500 transition-colors duration-300 text-2xl"
-                whileHover={{ scale: 1.2, y: -3 }}
-              >
-                <FaTwitter />
-              </motion.a>
+              
             </motion.div>
           </motion.div>
 
@@ -151,14 +136,7 @@ export default function Hero() {
                 )}
               </div>
 
-              {/* Floating Badge - Top Right */}
-              <motion.div
-                className="absolute -top-2 -right-2 bg-green-600 rounded-full p-3 shadow-xl shadow-green-600/30"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <span className="text-xl">✨</span>
-              </motion.div>
+    
 
               {/* Floating Badge - Bottom Left */}
               <motion.div

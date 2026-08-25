@@ -9,7 +9,7 @@ export default function About() {
   });
 
   const features = [
-    { icon: FaCode, title: 'Frontend', desc: 'React, Angular, Vue.js' },
+    { icon: FaCode, title: 'Frontend', desc: 'React, Angular, TypeScript' },
     { icon: FaServer, title: 'Backend', desc: 'Node.js, Python, Express' },
     { icon: FaDatabase, title: 'Database', desc: 'MongoDB, PostgreSQL, MySQL' },
     { icon: FaMobile, title: 'Responsive', desc: 'Mobile-first design' },
