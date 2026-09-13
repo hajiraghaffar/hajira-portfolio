@@ -45,7 +45,7 @@ export default function Contact() {
           <p className="section-subtitle">Let's work together</p>
         </motion.div>
 
-        <div className="relative w-full min-h-[80vh] flex justify-center items-center overflow-hidden bg-black">
+        <div className="relative w-full min-h-[80vh] flex justify-center items-center ">
           {/* Left Column */}
           {/* Background Animated Gradient - Behind everything */}
   <motion.div

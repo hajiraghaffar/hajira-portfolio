@@ -17,11 +17,7 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 relative">
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-600/5 rounded-full blur-2xl" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-600/5 rounded-full blur-2xl" />
-      </div>
+     
       
       <div className="container-custom relative z-10">
         <motion.div

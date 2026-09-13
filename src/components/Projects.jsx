@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaExternalLinkAlt, FaCode } from 'react-icons/fa';
 
+const hasLink = (url) => Boolean(url && url.trim());
+
 const projects = [
   {
     title: "AI Voice Detector",
@@ -9,7 +11,7 @@ const projects = [
     tech: ["React", "Python", "TensorFlow", "Node.js"],
     live: "https://ai-voice-detector.vercel.app",
     github: "https://github.com/hajira-ghaffar/ai-voice-detector",
-    featured: true
+    featured: false
   },
   {
     title: "University Admission System",
@@ -17,21 +19,23 @@ const projects = [
     tech: ["React", "Node.js", "MYSQL", "Tailwind"],
     live: "https://admission-system.vercel.app",
     github: "https://github.com/hajira-ghaffar/admission-system",
-    featured: true
-  },
-  {
-    title: "E-Commerce Platform",
-    desc: "Full-featured e-commerce solution with payment integration, inventory management, and real-time order tracking.",
-    tech: ["React", "Node.js", "Stripe", "PostgreSQL"],
-    
     featured: false
   },
   {
-    title: "Task Management Dashboard",
-    desc: "Real-time task management system with drag-and-drop, team collaboration, and analytics dashboard.",
-    tech: ["React", "Firebase", "Tailwind", "Chart.js"],
-    
+    title: "Car Parking System",
+    desc: "Smart parking management system with real-time slot booking, QR-based entry/exit, and admin analytics dashboard.",
+    tech: ["React", "Node.js", "Tailwind", "MongoDB"],
+    github: null,
+    live: null,
     featured: false
+  },
+  {
+    title: "Multi Agent Workspace",
+    desc: "Collaborative AI workspace where multiple autonomous agents handle tasks like research, writing, and code review in real time.",
+    tech: ["React", "Python", "FastAPI", "Pandas", "LangGraph"],
+    featured: false,
+    
+    showIcons: false,
   }
 ];
 
@@ -43,8 +47,6 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-gray-900/20" />
-      
       <div className="container-custom relative z-10">
         <motion.div
           ref={ref}
@@ -72,34 +74,62 @@ export default function Projects() {
                   Featured Project
                 </div>
               )}
-              
+
               <div className="flex items-start justify-between mb-3">
                 <FaCode className="text-3xl text-green-500" />
+
                 <div className="flex gap-2">
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-green-500 transition-colors duration-300"
-                    whileHover={{ scale: 1.2 }}
-                  >
-                    <FaGithub size={20} />
-                  </motion.a>
-                  <motion.a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-green-500 transition-colors duration-300"
-                    whileHover={{ scale: 1.2 }}
-                  >
-                    <FaExternalLinkAlt size={18} />
-                  </motion.a>
+                  {/* GitHub */}
+                  {hasLink(project.github) ? (
+                    <motion.a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-green-500 transition-colors duration-300"
+                      whileHover={{ scale: 1.2 }}
+                      aria-label="GitHub repository"
+                    >
+                      <FaGithub size={20} />
+                    </motion.a>
+                  ) : (
+                    <motion.span
+                      className="text-gray-600 cursor-not-allowed"
+                      whileHover={{ scale: 1.1 }}
+                      title="GitHub link not available"
+                      aria-label="GitHub not available"
+                    >
+                      <FaGithub size={20} />
+                    </motion.span>
+                  )}
+
+                  {/* Live */}
+                  {hasLink(project.live) ? (
+                    <motion.a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-green-500 transition-colors duration-300"
+                      whileHover={{ scale: 1.2 }}
+                      aria-label="Live demo"
+                    >
+                      <FaExternalLinkAlt size={18} />
+                    </motion.a>
+                  ) : (
+                    <motion.span
+                      className="text-gray-600 cursor-not-allowed"
+                      whileHover={{ scale: 1.1 }}
+                      title="Live demo not available"
+                      aria-label="Live demo not available"
+                    >
+                      <FaExternalLinkAlt size={18} />
+                    </motion.span>
+                  )}
                 </div>
               </div>
 
               <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
               <p className="text-gray-400 text-sm mb-4 leading-relaxed">{project.desc}</p>
-              
+
               <div className="flex flex-wrap gap-2">
                 {project.tech.map(tech => (
                   <span key={tech} className="skill-tag">

@@ -4,10 +4,10 @@ import { FaBriefcase, FaCalendar, FaMapMarker } from 'react-icons/fa';
 
 const experiences = [
   {
-    title: "Full Stack Developer",
-    company: "Tech Solutions Inc.",
+    title: "Frontend Developer",
+    company: "Compuwiz Technologies",
     location: "Remote",
-    period: "2023 - Present",
+    period: "2023",
     description: [
       "Developing scalable web applications using React and Node.js",
       "Implementing RESTful APIs and microservices architecture",
@@ -16,12 +16,12 @@ const experiences = [
     ]
   },
   {
-    title: "Frontend Developer",
-    company: "Digital Innovations",
-    location: "Pakistan",
-    period: "2022 - 2023",
+    title: "Full Stack Developer",
+    company: "CwizTech",
+    location: "Onsite, Gujrat",
+    period: "2024-2025",
     description: [
-      "Built responsive UI components with React and Tailwind CSS",
+      "Built responsive UI components with React, Angular and Tailwind CSS",
       "Optimized application performance and loading times",
       "Collaborated with design team on UX improvements",
       "Implemented CI/CD pipeline for automated deployments"
@@ -31,7 +31,7 @@ const experiences = [
     title: "Software Engineering Intern",
     company: "Startup Hub",
     location: "Pakistan",
-    period: "2021 - 2022",
+    period: "2023",
     description: [
       "Assisted in developing full-stack web applications",
       "Wrote clean, maintainable code with proper documentation",
@@ -48,7 +48,7 @@ export default function Experience() {
   });
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-b from-gray-900/20 to-black">
+    <section id="experience" className="py-20 ">
       <div className="container-custom">
         <motion.div
           ref={ref}

@@ -5,18 +5,7 @@ import heroImage from '../assets/img2.png'; // Make sure your image is in src/as
 export default function Hero() {
   return (
     <section id="hero" className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-green-600/5 rounded-full blur-2xl" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-600/5 rounded-full blur-2xl" />
-      </div>
-
-      {/* Animated particles */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-green-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
-      </div>
+     
 
       <div className="container-custom relative z-10 py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -33,7 +22,7 @@ export default function Hero() {
               transition={{ delay: 0.2 }}
               className="inline-block px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full"
             >
-              <span className="text-green-400 text-sm font-medium">🚀 Available for Work</span>
+              <span className="text-Cyan text-sm font-medium">🚀 Available for Work</span>
             </motion.div>
 
             <motion.h3
@@ -89,7 +78,7 @@ export default function Hero() {
               className="flex gap-6 pt-4"
             >
               <motion.a
-                href="https://github.com/hajira-ghaffar"
+                href="https://github.com/hajiraghaffar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-green-500 transition-colors duration-300 text-2xl"
@@ -139,12 +128,17 @@ export default function Hero() {
     
 
               {/* Floating Badge - Bottom Left */}
-              <motion.div
-                className="absolute -bottom-2 -left-2 bg-emerald-600 rounded-full p-3 shadow-xl shadow-emerald-600/30"
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+               <motion.div
+                className="absolute -bottom-8 -left-8 bg-gray-900/90 backdrop-blur-sm border border-green-500/20 rounded-xl p-4 shadow-xl"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1 }}
+                whileHover={{ scale: 1.05 }}
               >
-                <span className="text-xl">💻</span>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-green-500">4+</div>
+                  <div className="text-xs text-gray-400">Projects</div>
+                </div>
               </motion.div>
 
               {/* Stats Card - Floating */}
@@ -156,24 +150,13 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-500">1+</div>
+                  <div className="text-2xl font-bold text-green-500">1.5+</div>
                   <div className="text-xs text-gray-400">Years Experience</div>
                 </div>
               </motion.div>
 
               {/* Stats Card - Floating Left */}
-              <motion.div
-                className="absolute -top-8 -left-8 bg-gray-900/90 backdrop-blur-sm border border-green-500/20 rounded-xl p-4 shadow-xl"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-green-500">5+</div>
-                  <div className="text-xs text-gray-400">Projects</div>
-                </div>
-              </motion.div>
+              
             </div>
           </motion.div>
         </div>

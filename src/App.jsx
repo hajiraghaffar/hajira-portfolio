@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
+import GlobalBackground from './components/GlobalBackground';
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       });
     });
   }, []);
+  
 
   return (
     <div className="overflow-x-hidden">
@@ -34,6 +36,7 @@ function App() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
+        <GlobalBackground /> 
         <Hero />
         <About />
         <Skills />

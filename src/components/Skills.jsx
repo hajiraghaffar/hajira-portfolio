@@ -1,22 +1,34 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
-  FaReact, FaAngular, FaNodeJs, FaPython, 
-  FaJs, FaHtml5, FaCss3Alt, FaGitAlt,
+  FaReact, FaAngular, FaNodeJs, FaPython, FaFigma,
+  FaJs, FaHtml5, FaCss3Alt, FaGitAlt,FaDatabase,
   FaAws
 } from 'react-icons/fa';
-import { SiTensorflow, SiMongodb, SiTailwindcss, SiDocker } from 'react-icons/si';
+import { SiTensorflow, SiMysql, SiVite ,SiPostman, SiRedux, SiExpress, SiPandas, SiNumpy, SiScikitlearn, SiMongodb, SiTailwindcss, SiDocker } from 'react-icons/si';
 
 const skills = [
   { name: 'React', icon: FaReact, color: '#61DAFB', level: 90 },
+  { name: 'React Native', icon: FaReact ,        color: '#61DAFB', level: 90  },
+   { name: 'Tailwind CSS', icon: SiTailwindcss,  color: '#06B6D4', level: 90 },
+   { name: 'Redux',        icon: SiRedux,        color: '#764ABC' , level: 85 },
   { name: 'Angular', icon: FaAngular, color: '#DD0031', level: 85 },
   { name: 'Node.js', icon: FaNodeJs, color: '#339933', level: 88 },
-  { name: 'Python', icon: FaPython, color: '#3776AB', level: 80 },
   { name: 'JavaScript', icon: FaJs, color: '#F7DF1E', level: 92 },
   { name: 'TypeScript', icon: FaJs, color: '#3178C6', level: 85 },
   { name: 'MongoDB', icon: SiMongodb, color: '#47A248', level: 82 },
+   { name: 'MySQL',       icon: SiMysql , color: '#4479A1' , level: 87},
+    { name: 'Express.js',  icon: SiExpress,     color: '#ffffff', level: 85},
   { name: 'Tailwind', icon: SiTailwindcss, color: '#06B6D4', level: 88 },
-  { name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00', level: 75 },
+  { name: 'Vite',         icon: SiVite,         color: '#646CFF', level: 87 },
+  { name: 'Python', icon: FaPython, color: '#3776AB', level: 80 },
+   { name: 'NumPy',        icon: SiNumpy,        color: '#013243' , level: 87},
+      { name: 'Pandas',       icon: SiPandas,       color: '#150458' ,level: 90 },
+      { name: 'Scikit-learn', icon: SiScikitlearn,  color: '#F7931E', level: 90 },
+  { name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00', level: 82 },
+  { name: 'RAG',          icon: FaDatabase,     color: '#a855f7' ,level: 78},
+  { name: 'Postman',    icon: SiPostman ,   color: '#FF6C37' , level: 86},
+      { name: 'Figma',      icon: FaFigma,     color: '#F24E1E', level: 92 },
   { name: 'Docker', icon: SiDocker, color: '#2496ED', level: 78 },
   { name: 'AWS', icon: FaAws, color: '#FF9900', level: 72 },
   { name: 'Git', icon: FaGitAlt, color: '#F05032', level: 90 },
@@ -29,7 +41,7 @@ export default function Skills() {
   });
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-b from-black to-gray-900/30">
+    <section id="skills" className="py-20">
       <div className="container-custom">
         <motion.div
           ref={ref}

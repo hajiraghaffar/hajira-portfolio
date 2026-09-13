@@ -25,70 +25,69 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/95 backdrop-blur-md shadow-2xl' : 'bg-black'
-      }`}
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className="fixed top-0 left-0 right-0 z-50 pt-4 md:pt-6"
     >
-      <div className="container-custom py-4">
-        <div className="flex justify-between items-center">
-          {/* Logo - Left Aligned */}
-          <motion.a
-            href="#hero"
-            className="text-3xl font-bold text-green-500 hover:text-green-400 transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
+      <div className="container-custom">
+        {/* Desktop Centered Pill Menu */}
+        <div className="hidden md:flex justify-center">
+          <div
+            className={`flex items-center gap-8 px-8 py-3 rounded-full border backdrop-blur-md transition-all duration-500 ${
+              scrolled
+                ? 'bg-black/60 border-white/10 shadow-lg shadow-purple-500/10'
+                : 'bg-white/5 border-white/10'
+            }`}
           >
-            Hajira
-          </motion.a>
-
-          {/* Navigation - Right Aligned with Grey Background */}
-          <div className="hidden md:block">
-            <div className="bg-gray-900/80 backdrop-blur-sm rounded-full border border-gray-700 px-8 py-3 shadow-2xl">
-              <div className="flex items-center gap-12">
-                {navItems.map((item) => (
-                  <motion.a
-                    key={item.name}
-                    href={item.href}
-                    className="text-gray-300 hover:text-green-500 transition-all duration-300 font-medium text-sm uppercase tracking-wider"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {item.name}
-                  </motion.a>
-                ))}
-              </div>
-            </div>
+            {navItems.map((item) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                className="text-gray-300 hover:text-purple-400 transition-all duration-300 font-medium text-sm uppercase tracking-wider relative group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {item.name}
+                {/* Underline glow on hover */}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300" />
+              </motion.a>
+            ))}
           </div>
+        </div>
 
-          {/* Mobile Menu Button */}
+        {/* Mobile Top Bar */}
+        <div className="md:hidden flex justify-between items-center bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl px-5 py-3">
+          <span className="text-white font-semibold tracking-wider text-sm uppercase">
+            Hajira
+          </span>
           <button
-            className="md:hidden text-2xl text-gray-300 hover:text-green-500 transition-colors duration-300"
+            className="text-2xl text-gray-300 hover:text-purple-400 transition-colors duration-300"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Dropdown Menu */}
         <motion.div
           initial={false}
-          animate={{ 
-            height: isOpen ? 'auto' : 0, 
+          animate={{
+            height: isOpen ? 'auto' : 0,
             opacity: isOpen ? 1 : 0,
-            marginTop: isOpen ? 16 : 0
+            marginTop: isOpen ? 12 : 0,
           }}
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden"
         >
-          <div className="bg-gray-900/95 backdrop-blur-sm rounded-2xl border border-gray-700 p-6 shadow-2xl">
-            <div className="flex flex-col space-y-3">
+          <div className="bg-black/80 backdrop-blur-md rounded-2xl border border-white/10 p-5 shadow-2xl">
+            <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-3 text-gray-300 hover:text-green-500 hover:bg-gray-800 rounded-lg transition-all duration-300 font-medium"
+                  className="px-4 py-3 text-gray-300 hover:text-purple-400 hover:bg-white/5 rounded-lg transition-all duration-300 font-medium"
                   whileHover={{ x: 8 }}
                   onClick={() => setIsOpen(false)}
                 >
