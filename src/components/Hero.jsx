@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter, FaArrowDown } from 'react-icons/fa';
-import heroImage from '../assets/img2.png'; // Make sure your image is in src/assets/
+import heroImage from '../assets/img.jpg'; // Make sure your image is in src/assets/
 
 export default function Hero() {
   return (
@@ -20,20 +20,35 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-block px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full"
-            >
-              <span className="text-Cyan text-sm font-medium">🚀 Available for Work</span>
+              >
+             {/* className="inline-block px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full"
+            
+              <span className="text-Cyan text-sm font-medium">🚀 Available for Work</span>*/}
             </motion.div>
 
             <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-5xl md:text-5xl font-bold leading-tight"
-            >
-              <span className="text-white">Hajira Ghaffar</span>
-              
-            </motion.h3>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.3 }}
+  className="text-5xl md:text-5xl font-bold leading-tight"
+>
+  <motion.span
+    initial={{
+      textShadow: "2px 2px 4px rgba(0,0,0,0.5), -2px -2px 4px rgba(255,255,255,0.1)",
+    }}
+    whileHover={{
+      scale: 1.04,
+      x: 3,
+      /* Dynamic dual shadow shift on hover */
+      textShadow:
+        "4px 4px 10px rgba(99, 102, 241, 0.8), -4px -4px 10px rgba(120, 51, 176, 0.8)",
+    }}
+    transition={{ type: "spring", stiffness: 250, damping: 12 }}
+    className="inline-block cursor-pointer text-white"
+  >
+    Hajira Ghaffar
+  </motion.span>
+</motion.h3>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
