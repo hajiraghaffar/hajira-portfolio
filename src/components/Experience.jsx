@@ -7,7 +7,7 @@ const experiences = [
     title: "Frontend Developer",
     company: "Compuwiz Technologies",
     location: "Remote",
-    period: "2023",
+    period: "2024",
     description: [
       "Developing scalable web applications using React and Node.js",
       "Implementing RESTful APIs and microservices architecture",
@@ -19,7 +19,7 @@ const experiences = [
     title: "Full Stack Developer",
     company: "CwizTech",
     location: "Onsite, Gujrat",
-    period: "2024-2025",
+    period: "2025-2026",
     description: [
       "Built responsive UI components with React, Angular and Tailwind CSS",
       "Optimized application performance and loading times",
@@ -27,18 +27,7 @@ const experiences = [
       "Implemented CI/CD pipeline for automated deployments"
     ]
   },
-  {
-    title: "Software Engineering Intern",
-    company: "Startup Hub",
-    location: "Pakistan",
-    period: "2023",
-    description: [
-      "Assisted in developing full-stack web applications",
-      "Wrote clean, maintainable code with proper documentation",
-      "Participated in agile development sprints",
-      "Contributed to open-source projects"
-    ]
-  }
+  
 ];
 
 export default function Experience() {

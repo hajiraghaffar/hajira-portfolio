@@ -116,7 +116,7 @@ export default function Contact() {
                   <FaEnvelope className="text-green-500 text-xl" />
                   <div>
                     <p className="text-sm text-gray-500">Email</p>
-                    <p className="text-white font-medium">hajira.ghaffar@email.com</p>
+                    <p className="text-white font-medium">hajra.ghaffar19@email.com</p>
                   </div>
                 </motion.div>
 

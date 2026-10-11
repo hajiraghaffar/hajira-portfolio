@@ -9,23 +9,22 @@ const projects = [
     title: "AI Voice Detector",
     desc: "Advanced voice classification system using MFCC features and TensorFlow. Real-time detection with React frontend and Python backend.",
     tech: ["React", "Python", "TensorFlow", "Node.js"],
-    live: "https://ai-voice-detector.vercel.app",
-    github: "https://github.com/hajira-ghaffar/ai-voice-detector",
+    
+    github: "https://github.com/hajiraghaffar/ai-voice-detector",
     featured: false
   },
   {
     title: "University Admission System",
     desc: "Comprehensive full-stack platform with role-based authentication, 25+ REST APIs, and real-time dashboard for students and admins.",
     tech: ["React", "Node.js", "MYSQL", "Tailwind"],
-    live: "https://admission-system.vercel.app",
-    github: "https://github.com/hajira-ghaffar/admission-system",
+    github: "https://github.com/hajiraghaffar/studyadvisor",
     featured: false
   },
   {
     title: "Car Parking System",
     desc: "Smart parking management system with real-time slot booking, QR-based entry/exit, and admin analytics dashboard.",
     tech: ["React", "Node.js", "Tailwind", "MongoDB"],
-    github: null,
+    github: "https://github.com/hajiraghaffar/smartpark",
     live: null,
     featured: false
   },
@@ -34,7 +33,7 @@ const projects = [
     desc: "Collaborative AI workspace where multiple autonomous agents handle tasks like research, writing, and code review in real time.",
     tech: ["React", "Python", "FastAPI", "Pandas", "LangGraph"],
     featured: false,
-    
+    github: "https://github.com/hajiraghaffar/multi-agent-workflow-engine",
     showIcons: false,
   }
 ];
